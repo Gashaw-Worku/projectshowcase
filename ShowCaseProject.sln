@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowCase.Domain", "ShowCase.Domain\ShowCase.Domain.csproj", "{9DE4BAD5-C1B6-45B5-BB6F-44B1A164AA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowCase.WebUI", "ShowCase.WebUI\ShowCase.WebUI.csproj", "{A4B140DC-DC9B-40E4-9645-204750938345}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DE4BAD5-C1B6-45B5-BB6F-44B1A164AA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE4BAD5-C1B6-45B5-BB6F-44B1A164AA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE4BAD5-C1B6-45B5-BB6F-44B1A164AA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE4BAD5-C1B6-45B5-BB6F-44B1A164AA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B140DC-DC9B-40E4-9645-204750938345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B140DC-DC9B-40E4-9645-204750938345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B140DC-DC9B-40E4-9645-204750938345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B140DC-DC9B-40E4-9645-204750938345}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+﻿@model ShowCase.WebUI.Models.ThemeListViewModel
+
+@{
+    ViewBag.Title = "Theme";
+}
+
+@foreach (var t in Model.Themes)
+{
+    @Html.Partial("ThemeSummary", t)
+}
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
+
