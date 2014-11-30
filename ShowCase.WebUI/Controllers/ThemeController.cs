@@ -19,13 +19,6 @@ namespace ShowCase.WebUI.Controllers
 
         public ThemeController()
         {
-            //List<Theme> mock = new List<Theme>
-            //        {
-            //        new Theme { Name = "HouseHold", Description = "HouseCleaning" },
-            //        new Theme { Name = "HouseHold", Description = "Plumbing" },
-            //        new Theme { Name = "HouseHold", Description = "Gardening" }
-            //        };
-            //repository = mock;
             IThemeRepository t = new EFThemeRepository();
             repository = t;
         }
@@ -34,7 +27,7 @@ namespace ShowCase.WebUI.Controllers
         {
             ThemeListViewModel model = new ThemeListViewModel
             {
-                Themes = repository.Themes.Where(t=>name==null || t.Name == name)
+                Themes = repository.Themes.Where(t => name == null || t.Name == name)
                                            .OrderBy(t => t.ThemeId)
                                           .Skip((page - 1) * PageSize)
                                           .Take(PageSize),
@@ -42,9 +35,11 @@ namespace ShowCase.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.Themes.Count()
+                    TotalItems = name == null ? 
+                                         repository.Themes.Count() : 
+                                         repository.Themes.Where(t => t.Name == name).Count()
                 },
-                ThemeName= name
+                ThemeName = name
             };
             return View(model);
         }
