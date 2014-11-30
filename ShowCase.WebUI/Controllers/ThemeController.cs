@@ -30,11 +30,12 @@ namespace ShowCase.WebUI.Controllers
             repository = t;
         }
 
-        public ViewResult List(string category, int page = 1)
+        public ViewResult List(string name, int page = 1)
         {
             ThemeListViewModel model = new ThemeListViewModel
             {
-                Themes = repository.Themes.OrderBy(t => t.ThemeId)
+                Themes = repository.Themes.Where(t=>name==null || t.Name == name)
+                                           .OrderBy(t => t.ThemeId)
                                           .Skip((page - 1) * PageSize)
                                           .Take(PageSize),
                 PagingInfo = new PagingInfo
@@ -42,7 +43,8 @@ namespace ShowCase.WebUI.Controllers
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalItems = repository.Themes.Count()
-                }
+                },
+                ThemeName= name
             };
             return View(model);
         }

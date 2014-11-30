@@ -10,5 +10,6 @@ namespace ShowCase.WebUI.Models
     {
         public IEnumerable<Theme> Themes { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string ThemeName { get; set; }
     }
 }

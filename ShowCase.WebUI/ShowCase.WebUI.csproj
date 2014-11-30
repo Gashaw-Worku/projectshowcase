@@ -133,10 +133,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Theme\List.cshtml" />
     <Content Include="Views\Shared\ThemeSummary.cshtml" />
+    <Content Include="Views\Nav\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ThemeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -13,17 +13,43 @@ namespace ShowCase.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-               name: null,
-               url: "Page{page}",
-               defaults: new { controller = "Theme", action = "List", id = UrlParameter.Optional }
-           );
+            routes.MapRoute(null, "",
+                new
+                {
+                    controller = "Theme",
+                    action = "List",
+                    name = (string)null,
+                    page = 1
+                }
+            );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Theme", action = "List", id = UrlParameter.Optional }
+               null,
+               "Page{page}",
+                    new { controller = "Theme", 
+                          action = "List", 
+                          name = (string)null},
+                          new { page=@"\d+"}
             );
+
+            routes.MapRoute(
+              null,
+              "{name}",
+                    new
+                    {
+                        controller = "Theme",
+                        action = "List",
+                        page = 1
+                    }
+            );
+
+            routes.MapRoute(null,
+                "{name}/Page{page}",
+                new { controller = "Theme", action = "List"}, 
+                    new {page=@"\d+"}
+            );
+
+            routes.MapRoute(null, "{controller}/{action}");
         }
     }
 }
