@@ -29,8 +29,8 @@ namespace ShowCase.WebUI.Controllers
             {
                 Themes = repository.Themes.Where(t => name == null || t.Name == name)
                                            .OrderBy(t => t.ThemeId)
-                                          .Skip((page - 1) * PageSize)
-                                          .Take(PageSize),
+                                           .Skip((page - 1) * PageSize)
+                                           .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
